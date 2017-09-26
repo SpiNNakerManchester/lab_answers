@@ -21,6 +21,7 @@ class MySpiNNakerLinkDevice(
         return [FixedKeyAndMaskConstraint([
             BaseKeyAndMask(0x12340000, 0xFFFF0000)])]
 
+
 class MySpiNNakerLinkDeviceDataHolder(DataHolder):
 
     def __init__(self, spinnaker_link_id, label=None):
