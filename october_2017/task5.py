@@ -1,7 +1,6 @@
 import spynnaker8 as sim
 import pyNN.utility.plotting as plot
 import matplotlib.pyplot as plt
-import random
 
 simtime = 500
 n_neurons = 100
@@ -20,8 +19,9 @@ pre_pop = sim.Population(n_neurons, sim.IF_curr_exp(), label="presynaptic")
 # (hint: you can do this with a list comprehension).
 spike_times = [[x+y for x in [0, 200]] for y in range(n_neurons)]
 print spike_times
-pre_input = sim.Population(n_neurons, sim.SpikeSourceArray(spike_times=spike_times),
-                           label="pre input")
+pre_input = sim.Population(
+    n_neurons, sim.SpikeSourceArray(spike_times=spike_times),
+    label="pre input")
 sim.Projection(pre_input,  pre_pop,  sim.OneToOneConnector(),
                synapse_type=sim.StaticSynapse(weight=5.0))
 
@@ -76,12 +76,11 @@ delta_times = [spike_times[i][0] - 50 for i in range(n_neurons)]
 plt.plot(delta_times, delta_weights, ".")
 plt.xlabel("Delta Times")
 plt.ylabel("Delta Weights")
-#plt.axis([min(delta_times)-0.1, max(delta_times)+0.1,
-#111111111111          min(delta_weights)-0.1, max(delta_weights)+0.1])
+plt.axis([min(delta_times)-0.1, max(delta_times)+0.1,
+          min(delta_weights)-0.1, max(delta_weights)+0.1])
 plt.show()
 
 # test
-"""
 pre_neo = pre_pop.get_data(variables=["spikes"])
 pre_spikes = pre_neo.segments[0].spiketrains
 print "pre_spikes"
@@ -114,4 +113,3 @@ plot.Figure(
     annotations="Simulated with {}".format(sim.name())
 )
 plt.show()
-"""

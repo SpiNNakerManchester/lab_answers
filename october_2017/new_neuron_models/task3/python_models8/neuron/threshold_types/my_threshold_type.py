@@ -4,8 +4,8 @@ from data_specification.enums import DataType
 from spynnaker.pyNN.models.neuron.threshold_types import AbstractThresholdType
 
 from enum import Enum
-import random
 from pyNN.random import NumpyRNG
+
 
 class _MY_THRESHOLD_TYPES(Enum):
 

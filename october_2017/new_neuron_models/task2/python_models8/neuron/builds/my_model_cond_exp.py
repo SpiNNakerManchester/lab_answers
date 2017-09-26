@@ -9,7 +9,7 @@ from spynnaker.pyNN.models.neuron import AbstractPopulationVertex
 #    import MyAdditionalInput
 
 # TODO: input types (all imported for help, only use one)
-#from spynnaker.pyNN.models.neuron.input_types import InputTypeCurrent
+# from spynnaker.pyNN.models.neuron.input_types import InputTypeCurrent
 from spynnaker.pyNN.models.neuron.input_types import InputTypeConductance
 
 # TODO: neuron models (all imported for help, only use one)
