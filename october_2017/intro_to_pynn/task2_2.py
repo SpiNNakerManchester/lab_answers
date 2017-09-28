@@ -3,7 +3,6 @@ import spynnaker8.spynakker_plotting as splot
 import pyNN.utility.plotting as plot
 from pyNN.random import RandomDistribution
 import matplotlib.pyplot as plt
-import random
 
 simtime = 2000
 n_neurons = 7
@@ -26,10 +25,12 @@ print loop_conns
 
 rd_delays = RandomDistribution('normal', (1, 15))
 
-input_proj = sim.Projection(input, pop, sim.OneToOneConnector(),
-                            synapse_type=sim.StaticSynapse(weight=5, delay=2))
-loop_proj = sim.Projection(pop, pop, sim.FromListConnector(loop_conns),
-                           synapse_type=sim.StaticSynapse(weight=5, delay=rd_delays))
+input_proj = sim.Projection(
+    input, pop, sim.OneToOneConnector(),
+    synapse_type=sim.StaticSynapse(weight=5, delay=2))
+loop_proj = sim.Projection(
+    pop, pop, sim.FromListConnector(loop_conns),
+    synapse_type=sim.StaticSynapse(weight=5, delay=rd_delays))
 
 pop.record(["spikes", "v"])
 sim.run(simtime)
@@ -46,12 +47,12 @@ print v.shape
 sim.end()
 
 plot.Figure(
-    splot.SpynakkerPanel(v, ylabel="Pop[0] Membrane potential (mV)",
-               data_labels=[pop.label], xticks=True, yticks=True,
-               xlim=(0, simtime)),
-    plot.Panel(v, ylabel="Pop[0] Membrane potential (mV)",
-               data_labels=[pop.label], xticks=True, yticks=True,
-               xlim=(0, simtime)),
+    splot.SpynakkerPanel(
+        v, ylabel="Pop[0] Membrane potential (mV)",
+        data_labels=[pop.label], xticks=True, yticks=True, xlim=(0, simtime)),
+    plot.Panel(
+        v, ylabel="Pop[0] Membrane potential (mV)", data_labels=[pop.label],
+        xticks=True, yticks=True, xlim=(0, simtime)),
     # plot spikes
     splot.SpynakkerPanel(spikes, yticks=True, xticks=True, markersize=5,
                          xlim=(0, simtime)),

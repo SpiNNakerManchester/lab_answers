@@ -31,14 +31,17 @@ if rng is None:
     seed = None
 else:
     seed = int(rng.next()*1000)
-stim_exc = sim.Population(n_exc, sim.SpikeSourcePoisson(rate=1000.0, seed=seed),
-                          label="Stim_Exc")
+stim_exc = sim.Population(
+    n_exc, sim.SpikeSourcePoisson(rate=1000.0, seed=seed),
+    label="Stim_Exc")
+
 if rng is None:
     seed = None
 else:
     seed = int(rng.next()*1000)
-stim_inh = sim.Population(n_inh, sim.SpikeSourcePoisson(rate=1000.0, seed=int(rng.next()*1000)),
-                          label="Stim_Inh")
+stim_inh = sim.Population(
+    n_inh, sim.SpikeSourcePoisson(rate=1000.0, seed=int(rng.next()*1000)),
+    label="Stim_Inh")
 
 # Create a one-to-one excitatory connection
 # from the excitatory poisson stimulation population

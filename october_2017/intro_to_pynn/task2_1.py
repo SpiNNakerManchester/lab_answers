@@ -41,14 +41,15 @@ print v.shape
 sim.end()
 
 plot.Figure(
-    splot.SpynakkerPanel(v, ylabel="Pop[0] Membrane potential (mV)",
-               data_labels=[pop.label], xticks=True, yticks=True,
-               xlim=(0, simtime)),
+    splot.SpynakkerPanel(
+        v, ylabel="Pop[0] Membrane potential (mV)",
+        data_labels=[pop.label], xticks=True, yticks=True, xlim=(0, simtime)),
     plot.Panel(v, ylabel="Pop[0] Membrane potential (mV)",
                data_labels=[pop.label], xticks=True, yticks=True,
                xlim=(0, simtime)),
     # plot spikes (or in this case spike)
-    plot.Panel(spikes, yticks=True, xticks=True, markersize=5, xlim=(0, simtime)),
+    plot.Panel(spikes, yticks=True, xticks=True, markersize=5,
+               xlim=(0, simtime)),
     title="Simple Example",
     annotations="Simulated with {}".format(sim.name())
 )

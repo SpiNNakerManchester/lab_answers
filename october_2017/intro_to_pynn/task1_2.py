@@ -28,7 +28,8 @@ plot.Figure(
                data_labels=[pop_1.label], xticks=True, yticks=True,
                xlim=(0, simtime)),
     # plot spikes (if any)
-    plot.Panel(spikes, yticks=True, xticks=True, markersize=5, xlim=(0, simtime)),
+    plot.Panel(spikes, yticks=True, xticks=True, markersize=5,
+               xlim=(0, simtime)),
     title="Simple Example",
     annotations="Simulated with {}".format(sim.name())
 )
