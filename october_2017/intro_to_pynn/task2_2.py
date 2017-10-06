@@ -1,5 +1,5 @@
 import spynnaker8 as sim
-import spynnaker8.spynakker_plotting as splot
+import spynnaker8.spynnaker_plotting as splot
 import pyNN.utility.plotting as plot
 from pyNN.random import RandomDistribution
 import matplotlib.pyplot as plt
@@ -47,14 +47,14 @@ print v.shape
 sim.end()
 
 plot.Figure(
-    splot.SpynakkerPanel(
+    splot.Spynnakerpanel(
         v, ylabel="Pop[0] Membrane potential (mV)",
         data_labels=[pop.label], xticks=True, yticks=True, xlim=(0, simtime)),
     plot.Panel(
         v, ylabel="Pop[0] Membrane potential (mV)", data_labels=[pop.label],
         xticks=True, yticks=True, xlim=(0, simtime)),
     # plot spikes
-    splot.SpynakkerPanel(spikes, yticks=True, xticks=True, markersize=5,
+    splot.Spynnakerpanel(spikes, yticks=True, xticks=True, markersize=5,
                          xlim=(0, simtime)),
     title="Simple Example",
     annotations="Simulated with {}".format(sim.name())
