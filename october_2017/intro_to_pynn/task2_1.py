@@ -41,7 +41,7 @@ print v.shape
 sim.end()
 
 plot.Figure(
-    splot.Spynnakerpanel(
+    splot.SpynnakerPanel(
         v, ylabel="Pop[0] Membrane potential (mV)",
         data_labels=[pop.label], xticks=True, yticks=True, xlim=(0, simtime)),
     plot.Panel(v, ylabel="Pop[0] Membrane potential (mV)",

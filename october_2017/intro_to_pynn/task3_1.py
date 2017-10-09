@@ -142,11 +142,11 @@ for i in range(n_inh):
 
 plot.Figure(
     # plot spikes
-    splot.Spynnakerpanel(spikes_exc, yticks=True, markersize=5,
+    splot.SpynnakerPanel(spikes_exc, yticks=True, markersize=5,
                          xlim=(0, simtime), data_labels=[pop_exc.label]),
-    splot.Spynnakerpanel(spikes_inh, yticks=True, markersize=5,
+    splot.SpynnakerPanel(spikes_inh, yticks=True, markersize=5,
                          xlim=(0, simtime), data_labels=[pop_inh.label]),
-    splot.Spynnakerpanel(v_exc, ylabel="Pop[0] Membrane potential (mV)",
+    splot.SpynnakerPanel(v_exc, ylabel="Pop[0] Membrane potential (mV)",
                          data_labels=[pop_exc.label], xticks=True, yticks=True,
                          xlim=(0, simtime)),
     title="Balanced Random Cortel-like",
