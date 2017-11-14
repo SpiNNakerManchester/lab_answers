@@ -59,6 +59,7 @@ def send_spike(label, sender):
     print "Sending spike to neuron 0"
     sender.send_spike(label, 0)
 
+
 live_connection = p.external_devices.SpynnakerLiveSpikesConnection(
     send_labels=["inputSpikes_1"])
 live_connection.add_start_callback("inputSpikes_1", send_spike)
