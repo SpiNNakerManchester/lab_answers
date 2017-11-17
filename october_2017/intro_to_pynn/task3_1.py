@@ -1,5 +1,5 @@
 import spynnaker8 as sim
-import spynnaker8.spynakker_plotting as splot
+import spynnaker8.spynnaker_plotting as splot
 import pyNN.utility.plotting as plot
 import matplotlib.pyplot as plt
 from pyNN.random import RandomDistribution, NumpyRNG
@@ -142,11 +142,11 @@ for i in range(n_inh):
 
 plot.Figure(
     # plot spikes
-    splot.SpynakkerPanel(spikes_exc, yticks=True, markersize=5,
+    splot.SpynnakerPanel(spikes_exc, yticks=True, markersize=5,
                          xlim=(0, simtime), data_labels=[pop_exc.label]),
-    splot.SpynakkerPanel(spikes_inh, yticks=True, markersize=5,
+    splot.SpynnakerPanel(spikes_inh, yticks=True, markersize=5,
                          xlim=(0, simtime), data_labels=[pop_inh.label]),
-    splot.SpynakkerPanel(v_exc, ylabel="Pop[0] Membrane potential (mV)",
+    splot.SpynnakerPanel(v_exc, ylabel="Pop[0] Membrane potential (mV)",
                          data_labels=[pop_exc.label], xticks=True, yticks=True,
                          xlim=(0, simtime)),
     title="Balanced Random Cortel-like",
