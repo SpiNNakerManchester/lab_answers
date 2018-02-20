@@ -24,7 +24,7 @@ class MyModelCurrExpMyThresholdBase(AbstractPopulationVertex):
         'prob_fire': 0.5, 'seed': None,
         'threshold_value': -10.0}
 
-    none_pynn_default_parameters = {'v_init': None}
+    initialize_parameters = {'v_init': None}
 
     def __init__(
             self, n_neurons, spikes_per_second=AbstractPopulationVertex.

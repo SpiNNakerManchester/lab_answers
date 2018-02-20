@@ -20,7 +20,7 @@ class MyModelCondExpDataHolder(DataHolder):
                 'constraints'],
             label=AbstractPopulationVertex.none_pynn_default_parameters[
                 'label'],
-            v_init=MyModelCondExpBase.none_pynn_default_parameters['v_init'],
+            v_init=MyModelCondExpBase.initialize_parameters['v_init'],
             v_thresh=MyModelCondExpBase.default_parameters['v_thresh'],
             tau_syn_E=MyModelCondExpBase.default_parameters['tau_syn_E'],
             tau_syn_I=MyModelCondExpBase.default_parameters['tau_syn_I'],
