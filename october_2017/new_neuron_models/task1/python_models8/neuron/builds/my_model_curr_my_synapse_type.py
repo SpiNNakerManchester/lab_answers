@@ -23,18 +23,18 @@ class MyModelCurrMySynapseTypeBase(AbstractPopulationVertex):
         'v_rest': -65.0, 'decay': 0.1,
         'my_exc_init': 0.0, 'my_inh_init': 0.0}
 
-    none_pynn_default_parameters = {'v_init': None}
+    initialize_parameters = {'v_init': None}
 
     def __init__(
             self, n_neurons, spikes_per_second=AbstractPopulationVertex.
-            none_pynn_default_parameters['spikes_per_second'],
+            non_pynn_default_parameters['spikes_per_second'],
             ring_buffer_sigma=AbstractPopulationVertex.
-            none_pynn_default_parameters['ring_buffer_sigma'],
+            non_pynn_default_parameters['ring_buffer_sigma'],
             incoming_spike_buffer_size=AbstractPopulationVertex.
-            none_pynn_default_parameters['incoming_spike_buffer_size'],
-            constraints=AbstractPopulationVertex.none_pynn_default_parameters[
+            non_pynn_default_parameters['incoming_spike_buffer_size'],
+            constraints=AbstractPopulationVertex.non_pynn_default_parameters[
                 'constraints'],
-            label=AbstractPopulationVertex.none_pynn_default_parameters[
+            label=AbstractPopulationVertex.non_pynn_default_parameters[
                 'label'],
 
             # neuron model parameters
@@ -57,7 +57,7 @@ class MyModelCurrMySynapseTypeBase(AbstractPopulationVertex):
                 'my_inh_init'],
 
             # state variables
-            v_init=none_pynn_default_parameters['v_init']):
+            v_init=initialize_parameters['v_init']):
 
         # create neuron model class
         neuron_model = MyNeuronModel(

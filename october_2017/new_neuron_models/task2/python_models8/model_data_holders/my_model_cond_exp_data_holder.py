@@ -8,19 +8,19 @@ from python_models8.neuron.builds.my_model_cond_exp import MyModelCondExpBase
 class MyModelCondExpDataHolder(DataHolder):
     def __init__(
             self, spikes_per_second=(
-                AbstractPopulationVertex.none_pynn_default_parameters[
+                AbstractPopulationVertex.non_pynn_default_parameters[
                     'spikes_per_second']),
             ring_buffer_sigma=(
-                AbstractPopulationVertex.none_pynn_default_parameters[
+                AbstractPopulationVertex.non_pynn_default_parameters[
                     'ring_buffer_sigma']),
             incoming_spike_buffer_size=(
-                AbstractPopulationVertex.none_pynn_default_parameters[
+                AbstractPopulationVertex.non_pynn_default_parameters[
                     'incoming_spike_buffer_size']),
-            constraints=AbstractPopulationVertex.none_pynn_default_parameters[
+            constraints=AbstractPopulationVertex.non_pynn_default_parameters[
                 'constraints'],
-            label=AbstractPopulationVertex.none_pynn_default_parameters[
+            label=AbstractPopulationVertex.non_pynn_default_parameters[
                 'label'],
-            v_init=MyModelCondExpBase.none_pynn_default_parameters['v_init'],
+            v_init=MyModelCondExpBase.initialize_parameters['v_init'],
             v_thresh=MyModelCondExpBase.default_parameters['v_thresh'],
             tau_syn_E=MyModelCondExpBase.default_parameters['tau_syn_E'],
             tau_syn_I=MyModelCondExpBase.default_parameters['tau_syn_I'],
