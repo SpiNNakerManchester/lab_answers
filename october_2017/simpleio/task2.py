@@ -67,24 +67,24 @@ live_connection = p.external_devices.SpynnakerLiveSpikesConnection(
 
 
 def receive_spikes_1(label, time, neuron_ids):
-    print "Received spikes from population {}, neurons {} at time {}".format(
-        label, neuron_ids, time)
+    print("Received spikes from population {}, neurons {} at time {}".format(
+        label, neuron_ids, time))
     if (nNeurons - 1) in neuron_ids:
-        print "Sending spike to neuron 1 of input"
+        print("Sending spike to neuron 1 of input")
         live_connection.send_spike("inputSpikes_1", 1)
 
 
 def receive_spikes_2(label, time, neuron_ids):
-    print "Received spikes from population {}, neurons {} at time {}".format(
-        label, neuron_ids, time)
+    print("Received spikes from population {}, neurons {} at time {}".format(
+        label, neuron_ids, time))
     if (nNeurons - 1) in neuron_ids:
-        print "Sending spike to neuron 0 of input"
+        print("Sending spike to neuron 0 of input")
         live_connection.send_spike("inputSpikes_1", 0)
 
 
 def send_spike(label, sender):
     time.sleep(0.01)
-    print "Sending spike to neuron 0"
+    print("Sending spike to neuron 0")
     sender.send_spike(label, 0)
 
 

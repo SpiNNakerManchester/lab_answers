@@ -55,13 +55,13 @@ p.external_devices.activate_live_output_for(populations[0])
 
 
 def receive_spikes(label, time, neuron_ids):
-    print "Received spikes from population {}, neurons {} at time {}".format(
-        label, neuron_ids, time)
+    print("Received spikes from population {}, neurons {} at time {}".format(
+        label, neuron_ids, time))
 
 
 def send_spike(label, sender):
     time.sleep(0.01)
-    print "Sending spike to neuron 0"
+    print("Sending spike to neuron 0")
     sender.send_spike(label, 0)
 
 

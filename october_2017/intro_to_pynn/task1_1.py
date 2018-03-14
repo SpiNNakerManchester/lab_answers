@@ -24,7 +24,7 @@ sim.run(simtime)
 
 neo = pop_1.get_data(variables=["spikes"])
 spikes = neo.segments[0].spiketrains
-print spikes
+print(spikes)
 sim.end()
 
 plot.Figure(

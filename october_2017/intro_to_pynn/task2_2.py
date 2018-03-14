@@ -21,7 +21,7 @@ for i in range(0, n_neurons - 1):
     loop_conns.append(single_connection)
 single_connection = (n_neurons - 1, 0)
 loop_conns.append(single_connection)
-print loop_conns
+print(loop_conns)
 
 rd_delays = RandomDistribution('normal', (1, 15))
 
@@ -37,12 +37,12 @@ sim.run(simtime)
 
 s_neo = pop.get_data(variables=["spikes"])
 spikes = s_neo.segments[0].spiketrains
-print spikes
+print(spikes)
 v_neo = pop.get_data(variables=["v"])
 v = v_neo.segments[0].filter(name='v')[0]
-print v
-print "shape"
-print v.shape
+print(v)
+print("shape")
+print(v.shape)
 
 sim.end()
 

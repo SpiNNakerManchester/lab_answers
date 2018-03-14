@@ -42,10 +42,10 @@ while spike < simtime / 2:
 while spike < simtime:
     spike += random.randint(10, 30)
     spike_times1.append(spike)
-print "spike_times1"
-print spike_times1
-print "spike_times2"
-print spike_times2
+print("spike_times1")
+print(spike_times1)
+print("spike_times2")
+print(spike_times2)
 input1 = sim.Population(1, sim.SpikeSourceArray(spike_times=spike_times1),
                         label="input1")
 input2 = sim.Population(1, sim.SpikeSourceArray(spike_times=spike_times2),
@@ -76,10 +76,10 @@ post_weights = stdp_projection.getWeights()
 
 sim.end()
 
-print pre_weights
-print "pre_weights"
-print post_weights
-print "post_weights"
+print(pre_weights)
+print("pre_weights")
+print(post_weights)
+print("post_weights")
 
 line_properties = [{'color': 'red'}, {'color': 'blue'}]
 

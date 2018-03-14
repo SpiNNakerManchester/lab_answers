@@ -43,8 +43,8 @@ class MyThresholdType(AbstractThresholdType):
         self._prob_fire = int(utility_calls.convert_param_to_numpy(
             prob_fire, n_neurons) * 0xFFFFFFFF)
 
-        print prob_fire
-        print self._prob_fire
+        print(prob_fire)
+        print(self._prob_fire)
 
         # Get rng (if it hasn't been defined yet) using NumpyRNG
         if rng is None:
@@ -52,7 +52,7 @@ class MyThresholdType(AbstractThresholdType):
 
         # now get seed from rng
         seed = [rng.randint(0xFFFFFFFF) for _ in range(4)]
-        print seed
+        print(seed)
 
         # Validate the random seed here
         utility_calls.validate_mars_kiss_64_seed(seed)

@@ -6,8 +6,8 @@ logging.basicConfig()
 
 
 def receive_spikes(label, time, neuron_ids):
-    print "Received spikes from population {}, neurons {} at time {}".format(
-        label, neuron_ids, time)
+    print("Received spikes from population {}, neurons {} at time {}".format(
+        label, neuron_ids, time))
 
 
 live_connection = p.external_devices.SpynnakerLiveSpikesConnection(
