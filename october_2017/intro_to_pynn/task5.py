@@ -18,7 +18,7 @@ pre_pop = sim.Population(n_neurons, sim.IF_curr_exp(), label="presynaptic")
 # e.g. [[0, 200], [1, 201], ...]
 # (hint: you can do this with a list comprehension).
 spike_times = [[x+y for x in [0, 200]] for y in range(n_neurons)]
-print spike_times
+print(spike_times)
 pre_input = sim.Population(
     n_neurons, sim.SpikeSourceArray(spike_times=spike_times),
     label="pre input")
@@ -59,10 +59,10 @@ sim.run(simtime)
 
 post_weights = stdp_projection.getWeights()
 
-print pre_weights
-print "pre_weights"
-print post_weights
-print "post_weights"
+print(pre_weights)
+print("pre_weights")
+print(post_weights)
+print("post_weights")
 
 # Draw a graph of the weight changes from the initial weight value against the
 # difference in presynaptic and postsynaptic neurons
@@ -83,21 +83,21 @@ plt.show()
 # test
 pre_neo = pre_pop.get_data(variables=["spikes"])
 pre_spikes = pre_neo.segments[0].spiketrains
-print "pre_spikes"
-print pre_spikes
+print("pre_spikes")
+print(pre_spikes)
 
 post_neo = post_pop.get_data(variables=["spikes"])
 post_spikes = post_neo.segments[0].spiketrains
-print "post_spikes"
-print post_spikes
+print("post_spikes")
+print(post_spikes)
 
 
 sim.end()
 
-print pre_weights
-print "pre_weights"
-print post_weights
-print "post_weights"
+print(pre_weights)
+print("pre_weights")
+print(post_weights)
+print("post_weights")
 
 line_properties = [{'color': 'red'}, {'color': 'blue'}]
 

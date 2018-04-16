@@ -56,7 +56,7 @@ populations[0].record(['v', 'gsyn_exc', 'gsyn_inh', 'spikes'])
 
 def send_spike(label, sender):
     time.sleep(0.01)
-    print "Sending spike to neuron 0"
+    print("Sending spike to neuron 0")
     sender.send_spike(label, 0)
 
 

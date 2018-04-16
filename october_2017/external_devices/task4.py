@@ -1,9 +1,6 @@
-from spynnaker.pyNN.external_devices_models \
-    import AbstractEthernetTranslator
-from spynnaker.pyNN.external_devices_models \
-    import AbstractMulticastControllableDevice
-
 import spynnaker8 as p
+from spynnaker.pyNN.external_devices_models \
+    import AbstractEthernetTranslator, AbstractMulticastControllableDevice
 
 
 class MyEthernetDevice(AbstractMulticastControllableDevice):
@@ -36,7 +33,8 @@ class MyEthernetDevice(AbstractMulticastControllableDevice):
 class MyEthernetTranslator(AbstractEthernetTranslator):
 
     def translate_control_packet(self, multicast_packet):
-        print "Received", multicast_packet.key, multicast_packet.payload
+        print("Received {}:{}".format(
+            multicast_packet.key, multicast_packet.payload))
 
 
 p.setup(1.0)
@@ -55,6 +53,6 @@ p.Projection(
 
 p.run(1000)
 
-print ethernet_device.get_data("v").segments[0].filter(name='v')
+print(ethernet_device.get_data("v").segments[0].filter(name='v'))
 
 p.end()

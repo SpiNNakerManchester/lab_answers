@@ -128,17 +128,17 @@ sim.run(simtime)
 # Retrieve and plot the spikes.
 neo_exc = pop_exc.get_data(variables=["spikes", "v"])
 spikes_exc = neo_exc.segments[0].spiketrains
-print "spikes_exc"
+print("spikes_exc")
 for i in range(n_exc):
     for spike in spikes_exc[i]:
-        print i, spike
+        print("  {}: {}".format(i, spike))
 v_exc = neo_exc.segments[0].filter(name='v')[0]
 neo_inh = pop_inh.get_data(variables=["spikes"])
 spikes_inh = neo_inh.segments[0].spiketrains
-print "spikes_inh"
+print("spikes_inh")
 for i in range(n_inh):
     for spike in spikes_inh[i]:
-        print i, spike
+        print("  {}: {}".format(i, spike))
 
 plot.Figure(
     # plot spikes

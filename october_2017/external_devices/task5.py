@@ -1,8 +1,7 @@
+import time
+import spynnaker8 as p
 from spynnaker.pyNN.external_devices_models import AbstractEthernetSensor
 from spynnaker.pyNN.connections import SpynnakerLiveSpikesConnection
-import time
-
-import spynnaker8 as p
 
 
 class MyEthernetSensor(AbstractEthernetSensor):
@@ -16,7 +15,7 @@ class MyEthernetSensor(AbstractEthernetSensor):
     @staticmethod
     def _send_spike(label, sender):
         time.sleep(0.01)
-        print "Sending spike to 0"
+        print("Sending spike to 0")
         sender.send_spike(label, 0)
 
     def get_n_neurons(self):
@@ -50,6 +49,6 @@ p.Projection(
 
 p.run(1000)
 
-print ethernet_input_pop.get_data("v").segments[0].filter(name='v')
+print(ethernet_input_pop.get_data("v").segments[0].filter(name='v'))
 
 p.end()

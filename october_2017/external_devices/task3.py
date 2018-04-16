@@ -49,6 +49,6 @@ p.Projection(
 
 p.run(1000)
 
-print spinnaker_link_device.get_data("v").segments[0].filter(name='v')
+print(spinnaker_link_device.get_data("v").segments[0].filter(name='v'))
 
 p.end()
