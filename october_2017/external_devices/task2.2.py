@@ -8,7 +8,8 @@ from pacman.model.constraints.key_allocator_constraints \
     import FixedKeyAndMaskConstraint
 from spinn_front_end_common.abstract_models \
     import AbstractProvidesOutgoingPartitionConstraints
-from pacman.model.graphs.application import ApplicationSpiNNakerLinkVertex
+from spinn_front_end_common.abstract_models import (
+    ApplicationSpiNNakerLinkVertex)
 
 
 class MySpiNNakerLinkDevice(

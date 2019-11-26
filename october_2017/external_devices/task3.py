@@ -1,6 +1,7 @@
 from spynnaker.pyNN.external_devices_models \
     import AbstractMulticastControllableDevice
-from pacman.model.graphs.application import ApplicationSpiNNakerLinkVertex
+from spinn_front_end_common.abstract_models import (
+    ApplicationSpiNNakerLinkVertex)
 
 import pyNN.spiNNaker as p
 

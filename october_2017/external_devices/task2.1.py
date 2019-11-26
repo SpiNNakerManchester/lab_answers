@@ -3,9 +3,9 @@ from spynnaker8.utilities import DataHolder
 from pacman.model.routing_info.base_key_and_mask import BaseKeyAndMask
 from pacman.model.constraints.key_allocator_constraints \
     import FixedKeyAndMaskConstraint
-from spinn_front_end_common.abstract_models \
-    import AbstractProvidesOutgoingPartitionConstraints
-from pacman.model.graphs.application import ApplicationSpiNNakerLinkVertex
+from spinn_front_end_common.abstract_models import (
+    AbstractProvidesOutgoingPartitionConstraints,
+    ApplicationSpiNNakerLinkVertex)
 
 
 class MySpiNNakerLinkDevice(

@@ -1,8 +1,8 @@
 import pyNN.spiNNaker as p
 from spynnaker8.utilities.data_holder import DataHolder
 
-from pacman.model.graphs.application.application_spinnaker_link_vertex \
-    import ApplicationSpiNNakerLinkVertex
+from spinn_front_end_common.abstract_models import (
+    ApplicationSpiNNakerLinkVertex)
 
 
 class MySpiNNakerLinkDevice(ApplicationSpiNNakerLinkVertex):
